@@ -1,6 +1,6 @@
 # Retro Video Game Store Database and Analysis
 ## Introduction and Problem Statement
-Nostalgia Cave is a retail store that primarily sells vintage video games, consoles, and accessories
+Nostalgia Cave is a retail store that primarily sells many retro and contemporary video games, consoles, and accessories
 
 As the store approaches its sixth month of business, the owner is realizing that there are issues with tracking transactions and customer history. 
 
