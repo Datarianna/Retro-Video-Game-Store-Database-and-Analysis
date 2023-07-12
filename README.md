@@ -9,6 +9,13 @@ there are several challenges happening that are affecting the business and opera
 2. Constantly having to change prices for products since their demand fluctuates a lot.
 3. Sourcing inventory; since many retro games are no longer being produced, there is very limited supply in them and Nostalgia Cave must rely on collectors and online marketplaces to add to their inventory. 
 
-To tackle these challenges, a database that accurately tracks all sales transactions and customer purchase history will be developed. Queries will be executed to gather meaningful information about sales and purchase history. This will help the owner...
+To tackle these challenges, I will be using MySQL to create a database that accurately tracks all sales transactions and customer purchase history, as well as run queries that will gather meaningful information about the business.
+Then, I will be utilizing Python modules such as Pandas, Matplotlib, and Seaborn to calculate statistical analyses on the data.
+Lastly, a dashboard will be created for managers so that they can visually see the performance of their company.
 
-##
+## Software Used
+- MySQL: for creating the database
+- Python Pandas Matplotlib, Seaborn: for data cleaning, manipulation, and visualization
+- Jupyter Notebook: for coding process
+- Tableau: For interactive dashboard
+
