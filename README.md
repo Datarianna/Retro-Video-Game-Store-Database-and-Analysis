@@ -14,8 +14,10 @@ Then, I will be utilizing Python modules such as Pandas, Matplotlib, and Seaborn
 Lastly, a dashboard will be created for managers so that they can visually see the performance of their company.
 
 ## Software Used
+= LucidChart
 - MySQL: for creating the database
 - Python Pandas Matplotlib, Seaborn: for data cleaning, manipulation, and visualization
 - Jupyter Notebook: for coding process
 - Tableau: For interactive dashboard
 
+# Creating the ER Diagram
