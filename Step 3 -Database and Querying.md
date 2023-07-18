@@ -100,3 +100,19 @@ bottom 5 games sold:
 |GoldenEye 007|	2
 |Super Mario Bros. 3|	1
 |Final Fantasy X	|1
+
+### 3. Find the total number of transactions for each payment type (cash, credit, debit, mobile) and put them in order from most to least used payment types.
+```sql
+SELECT payment_method,COUNT(payment_method) AS '# of Transactions' FROM transactions
+GROUP BY payment_method
+ORDER BY COUNT(payment_method) DESC;
+```
+
+|payment_method|# of transactions
+|--------------|-----------------
+|mobile payment|	408
+|debit	|372
+|credit	|369
+|cash	|351
+
+### 4. 
