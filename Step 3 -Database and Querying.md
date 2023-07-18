@@ -71,3 +71,32 @@ ORDER BY COUNT(transactions.trans_id) DESC;
 | 767 | 5 | Naomi Maxwell    |
 | 408 | 5 | Iola Weeks       |
 | 330 | 5 | Octavia Burke    |
+
+### 2. Find the number of copies sold for each game and order them from most to least number of copies sold.
+```sql
+SELECT games.name AS game_name, COUNT(*) AS '# of Copies Sold'
+FROM transactions
+INNER JOIN games
+ON transactions.product_id = games.product_id
+GROUP BY games.name
+ORDER BY popularity DESC;
+```
+105 rows will be returned, but I will show the top 5 and bottom 5 games.
+
+top 5 games sold:
+| game_name | # of Copies Sold
+|-----------|-----------------
+|Metal Gear Solid HD Collection	| 26
+|The Legend of Zelda: A Link to the Past |	18
+|Super Mario 64	| 17
+|Sonic & Knuckles	| 16
+|Pokemon Ruby	| 14
+
+bottom 5 games sold:
+| game_name | # of Copies Sold
+|-----------|-----------------
+|Super Bomberman|	2
+|Super Smash Bros.|	2
+|GoldenEye 007|	2
+|Super Mario Bros. 3|	1
+|Final Fantasy X	|1
