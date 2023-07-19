@@ -15,7 +15,7 @@ Lastly, a dashboard will be created for managers so that they can visually see t
 
 ## Software Used
 - LucidChart for creating the ER Diagram
-- MySQL: for creating the database
+- MySQL: for creating the database and querying
 - Python Pandas Matplotlib, Seaborn: for data cleaning, manipulation, and visualization
 - Jupyter Notebook: for coding process
 - Tableau: For interactive dashboard
