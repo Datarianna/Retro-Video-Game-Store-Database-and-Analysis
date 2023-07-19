@@ -219,3 +219,21 @@ Lavinia Powell|	2023-06-14	|Game
 Vivien Roman	|2023-06-12	|Game
 India Roberts	|2023-06-05	|Game
 Naomi Compton	|2023-06-24	|Game
+
+### 10. Suppose a customer is looking for any Playstation 2 games. Query a catalog of Playstation 2 games that are in stock.
+```sql
+SELECT name, console, genre FROM games
+WHERE console = 'Playstation 2';
+```
+
+name | console | genre |price
+-----|---------|-------|-----
+Metal Gear Solid 3: Snake Eater	|PlayStation 2|	Stealth action|	30
+Final Fantasy X	|PlayStation 2	|Role-playing game (RPG)	|35
+Metal Gear Solid 2: Sons of Liberty	|PlayStation 2|	Stealth action	|30
+Kingdom Hearts	|PlayStation 2	|Action role-playing game (ARPG)	|40
+Silent Hill 3	|PlayStation 2|	Survival horror|	30
+Silent Hill 2	|PlayStation 2|	Survival horror	|30
+Final Fantasy X-2	|PlayStation 2|	Role-playing game (RPG)|	30
+Silent Hill 2: Director's Cut	|PlayStation 2	|Survival horror	|35
+Silent Hill 2	|PlayStation 2	|Survival horror	|35
