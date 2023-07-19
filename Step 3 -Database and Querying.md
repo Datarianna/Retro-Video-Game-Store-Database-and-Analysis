@@ -115,4 +115,76 @@ ORDER BY COUNT(payment_method) DESC;
 |credit	|369
 |cash	|351
 
-### 4. 
+### 4. Rank the top selling video game genres in the store from highest to lowest units sold.
+```sql
+SELECT games.genre, COUNT(games.genre) AS '# units sold' FROM transactions
+INNER JOIN games
+ON transactions.product_id = games.product_id
+GROUP BY genre
+ORDER BY COUNT(games.genre) DESC;
+```
+
+Top 5 Genres:
+ genre | # units sold
+-------|-------------
+|Platformer	|168
+|Role-playing game (RPG)	|148
+|Action-Adventure|	88
+|Stealth action|	50
+|Survival horror|	37
+
+Bottom 5 Genres:
+genre | # units sold
+------|-------------
+Run and gun|	6
+Simulation|	6
+First-person shooter|	6
+Maze|	4
+Fighting/Party|	2
+
+### 5. In Question 5, we see that Sierra Acevedo is the top customer of Nostalgia Cave. Find a list of games that they have purchased from the store. What games do they seem to purchase the most?
+```sql
+SELECT customers.full_name, games.name FROM transactions
+INNER JOIN customers ON transactions.customer_id = customers.customer_id
+INNER JOIN games ON transactions.product_id = games.product_id
+HAVING customers.full_name = 'Sierra Acevedo';
+```
+full_name |	name
+----------|------
+Sierra Acevedo|	Star Wars: Knights of the Old Republic
+Sierra Acevedo|	Mega Man X4
+Sierra Acevedo|	Pokemon Yellow
+Sierra Acevedo|	Pokemon FireRed
+Sierra Acevedo|	Mega Man 2
+Sierra Acevedo|	Final Fight
+Sierra Acevedo|	Pokemon Red
+Sierra Acevedo|	Pokemon Ruby
+
+Based on this query, Sierra's favorite games are Pokemon and Mega Man.
+
+### 6. Find the highest selling console brand.
+```sql
+SELECT consoles.brand, COUNT(consoles.brand) AS '# units sold' FROM transactions
+INNER JOIN consoles ON transactions.product_id = consoles.product_id
+GROUP BY consoles.brand
+ORDER BY COUNT(consoles.brand) DESC
+LIMIT 1;
+```
+
+brand | # units sold
+------|-------------
+Nintendo | 97
+
+### 7. Suppose there is a 25% discount on all accessories that are $80 or more. Create a new column with the discounted prices.
+```sql
+SELECT name, price, price*.75 AS 'discounted price' FROM accessories
+WHERE price >= 80;
+```
+
+name | price | discounted_price
+-----|-------|-----------------
+Xbox Elite Wireless Controller Series 2 (Black)	|180|	135
+Xbox 360 Wireless Speed Wheel|	80|	60
+Xbox 360 Wireless Racing Wheel	|100|	75
+Xbox 360 Kinect Sensor	|80|	60
+Sega Saturn Arcade Racer Joystick|	80|	60
