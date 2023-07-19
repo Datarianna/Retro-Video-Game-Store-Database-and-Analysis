@@ -188,3 +188,34 @@ Xbox 360 Wireless Speed Wheel|	80|	60
 Xbox 360 Wireless Racing Wheel	|100|	75
 Xbox 360 Kinect Sensor	|80|	60
 Sega Saturn Arcade Racer Joystick|	80|	60
+
+### 8. Count the number of distinct customers that came to the store each month.
+```sql
+SELECT DATE_FORMAT(date, '%m') AS 'month', COUNT(DISTINCT customer_id) AS '# of customers'
+FROM transactions
+GROUP BY DATE_FORMAT(date, '%m');
+```
+
+month | # of customers
+------|---------------
+01	|213
+02	|207
+03	|207
+04	|219
+05	|227
+06 |212
+
+### 9. Suppose that there was an event throughout the month of June where people who purchased a video game from the store would be entered into a raffle on July 1st for a PS5. Query a list of all distinct customers who purchased a game in June to add them into the raffle.
+```sql
+SELECT DISTINCT customers.full_name, transactions.date, products.category FROM transactions
+LEFT JOIN customers ON transactions.customer_id = customers.customer_id
+LEFT JOIN products ON transactions.product_id = products.product_id
+WHERE category = 'Game' AND (date BETWEEN '2023-06-01' AND '2023-06-30');
+```
+full_name | date | category
+----------|------|---------
+Shaine Olson	|2023-06-17	|Game
+Lavinia Powell|	2023-06-14	|Game
+Vivien Roman	|2023-06-12	|Game
+India Roberts	|2023-06-05	|Game
+Naomi Compton	|2023-06-24	|Game
